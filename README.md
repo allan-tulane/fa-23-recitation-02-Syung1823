@@ -1,7 +1,7 @@
 # CMPS 2200  Recitation 02
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1):**_Killian Daly 
+**Name (Team Member 2):**__Reid Miller__________
 
 In this recitation, we will investigate recurrences. 
 To complete this recitation, follow the instructions in this document. Some of your answers will go in this file, and others will require you to edit `main.py`.
@@ -40,12 +40,44 @@ where $W(1) = 1$.
 
 - [ ] 4. (2 point) Now, derive the asymptotic behavior of $W(n)$ using $f(n) = 1$, $f(n) = \log n$ and $f(n) = n$. Then, generate actual values for $W(n)$ for your code and confirm that the trends match your derivations.
 
-**TODO: your answer goes here**
+- 
+The asymptotic behaviour is respectivly: 
+for $f(1) = O(n)$ , $f(n) = O(nlogn)$, $f(n^2) = O(n^2)$
+| N | F(1) | F(n) | F(3) |
+| -------- | ------- | ------- | ------- |
+| 1 | 1 | 1 | 1 |
+| 10 | 15| 36 | 174 |
+| 10 | 127 | 652 | 19580 |
+| 100 | 1023| 9120 | 1990744|
 
 - [ ] 5. (4 points) Now that you have a nice way to empirically generate valuess of $W(n)$, we can look at the relationship between $a$, $b$, and $f(n)$. Suppose that $f(n) = n^c$. What is the asypmptotic behavior of $W(n)$ if $c < \log_b a$? What about $c > \log_b a$? And if they are equal? Modify `compare_work` to compare empirical values for different work functions (at several different values of $n$) to justify your answer. 
+
+|     n |       C<$log_2 2$|         C>$log_2 2$ |
+|-------|-----------|-------------|
+|    10 |    21.291 |      73.297 |
+|    20 |    47.055 |     236.037 |
+|    50 |   110.236 |    1002.544 |
+|   100 |   230.472 |    3005.088 |
+|  1000 |  2075.117 |  102240.295 |
+|  5000 | 14251.208 | 1184225.930 |
+| 10000 | 28602.416 | 3368451.860 |
+
+
 
 **TODO: your answer goes here**
 
 - [ ] 6. (3 points) $W(n)$ is meant to represent the running time of some recursive algorithm. Suppose we always had $a$ processors available to us and we wanted to compute the span of the same algorithm. Implement the function `span_calc` to compute the empirical span, where the work of the algorithm is given by $W(n)$. Implement `test_compare_span` to create a new comparison function for comparing span functions. Derive the asymptotic expressions for the span of the recurrences you used in problem 4 above. Confirm that everything matches up as it should. 
 
-**TODO: your answer goes here**
+|     n |     W_1 |         W_2 |
+|-------|---------|-------------|
+|    10 |   7.813 |      46.632 |
+|    20 |  12.285 |     136.074 |
+|    50 |  20.717 |     541.016 |
+|   100 |  30.717 |    1541.016 |
+|  1000 | 103.668 |   48897.106 |
+|  5000 | 238.069 |  546886.102 |
+| 10000 | 338.069 | 1546886.102 |
+
+- asymptotic span for all three function O(n<sup>log_b a</sup>) 
+
+
